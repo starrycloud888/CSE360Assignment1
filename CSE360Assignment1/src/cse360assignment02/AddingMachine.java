@@ -7,28 +7,33 @@ package cse360assignment02;
 
 public class AddingMachine {
   private int total;
+  private String history;
   
   public AddingMachine () {
-	  total = 0;  // not needed - included for clarity
-  }
+	  this.total = 0;  // not needed - included for clarity
+	  this.history = "0";
+  } // initializes attributes
   
   public int getTotal () {
-	  return 0;
-  } // returns total
+	  return this.total;
+  } // returns total value
   
   public void add (int value) {
-	  
-  } // adds
+	  this.total = this.total + value;
+	  this.history = this.history + " + " + Integer.toString(value);
+  } // adds parameter to total variable
 
   public void subtract (int value) {
-	  
-  } // subtracts
+	  this.total = this.total - value;
+	  this.history = this.history + " - " + Integer.toString(value);
+  } // subtracts parameter from total variable
 
   public String toString () {
-	  return "";
-  } // returns string
+	  return this.history;
+  } // returns history of transactions
 
   public void clear() {
-	  
-  } // deletes something?
+	  this.total = 0;
+	  this.history = "0";
+  } // resets attributes to values assigned in constructor
 }
